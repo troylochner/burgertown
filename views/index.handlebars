@@ -3,9 +3,9 @@
 <h2>Cats that are not sleepy!</h2>
 
 <ul>
-  {{#each cats}}
-    {{#unless sleepy}}
-      {{> cats/cat-block sleep=true}}
+  {{#each burgers}}
+    {{#unless devoured}}
+     {{> cats/cat-block sleep=true}}
     {{/unless}}
   {{/each}}
 </ul>
@@ -20,11 +20,11 @@
   {{/each}}
 </ul>
 
-<h2>Add a Cat</h2>
+<h2>Add a Burger</h2>
 <form class="create-form">
 
   <div class="form-group">
-    <label for="ca">Cat Name:</label>
+    <label for="ca">Burger Name:</label>
     <input type="text" id="ca" name="name">
   </div>
 
