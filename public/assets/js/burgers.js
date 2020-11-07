@@ -4,7 +4,7 @@ $(function() {
     var id = $(this).data("id");
 
     var devourState = {
-      devoured: true
+      devoured: 1
     };
 
     // Send the PUT request.

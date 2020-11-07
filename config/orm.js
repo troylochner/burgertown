@@ -11,6 +11,7 @@ function printQuestionMarks(num) {
   return arr.toString();
 }
 
+// Helper function to convert object key/value pairs to SQL syntax
 function objToSql(ob) {
   var arr = [];
 
@@ -28,6 +29,9 @@ function objToSql(ob) {
       arr.push(key + "=" + value);
     }
   }
+
+  // translate array of strings to a single comma-separated string
+  return arr.toString();
 }
 //ORM SETUP
 var orm = {
@@ -61,18 +65,20 @@ var orm = {
       });
     },
     
-    updateOne: function(tableInput, objColVals, condition, cb) {
-      var queryString = "UPDATE " + tableInput;
+    update: function(table, objColVals, condition, cb) {
+      var queryString = "UPDATE " + table;
   
       queryString += " SET ";
       queryString += objToSql(objColVals);
       queryString += " WHERE ";
       queryString += condition;
+  
       console.log(queryString);
       connection.query(queryString, function(err, result) {
         if (err) {
           throw err;
         }
+  
         cb(result);
       });
     },
