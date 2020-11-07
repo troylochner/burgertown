@@ -2,6 +2,12 @@ li {
   padding: 5px;
   margin: 5px;
   background: #faebd7;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/*ADDED A CLASS FOR EATEN BURGERS*/
+.eaten { 
+  background: #9fb879;
 }
 
 .label {
